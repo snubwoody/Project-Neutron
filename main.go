@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	Page("out/index.html")
+	Page("dist/index.html")
 }
 
 func Page(path string) {
@@ -22,31 +22,32 @@ func Page(path string) {
 
 	w.Write([]byte("<!DOCTYPE html>\n"))
 
-	h1 := &HtmlElement{
-		tag:  "h1",
-		text: "This is a heading",
-	}
+	body := Body(
+		Nav(
+			P("Dashboard"),
+		),
+		Main(
+			Aside(
+				P("Hello world"),
+				Button("Click me"),
+			),
+			Section(
+				P("Hello world"),
+				Button("Click me"),
+				A("https://youtube.com", "This is a link to youtube"),
+				Row(
+					P("Hi"),
+					P("Hello"),
+					P("World"),
+				),
+			),
+		),
+	)
 
-	p := &HtmlElement{
-		tag:  "p",
-		text: "This is a paragraph",
-	}
-
-	div := &HtmlElement{
-		tag:      "div",
-		class:    []string{"div"},
-		children: []*HtmlElement{h1, p},
-	}
-
-	head := &HtmlElement{
-		tag: "head",
-	}
-
-	body := &HtmlElement{
-		tag:      "body",
-		class:    []string{"hi"},
-		children: []*HtmlElement{div, button("Click me")},
-	}
+	head := Head(
+		Link("styles/preflight.css", "stylesheet"),
+		Link("styles/base.css", "stylesheet"),
+	)
 
 	html := HtmlElement{
 		tag:      "html",

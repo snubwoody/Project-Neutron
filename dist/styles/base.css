@@ -1,0 +1,40 @@
+.spacing-xs{
+	gap: var(--spacing-xs);
+}
+
+.spacing-sm{
+	gap: var(--spacing-sm);
+}
+
+.spacing-md{
+	gap: var(--spacing-md);
+}
+
+.spacing-lg{
+	gap: var(--spacing-lg);
+}
+
+.spacing-xl{
+	gap: var(--spacing-xl);
+}
+
+.spacing-2xs{
+	gap: var(--spacing-2xl);
+}
+
+.spacing-3xl{
+	gap: var(--spacing-3xl);
+}
+
+.spacing-4xl{
+	gap: var(--spacing-4xl);
+}
+
+.spacing-5xl{
+	gap: var(--spacing-5xl);
+}
+
+.row{
+	display: flex;
+	flex-direction: row;
+}
