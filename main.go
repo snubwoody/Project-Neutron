@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	Page("index.html")
+	Page("out/index.html")
 }
 
 func Page(path string) {
@@ -45,7 +45,7 @@ func Page(path string) {
 	body := &HtmlElement{
 		tag:      "body",
 		class:    []string{"hi"},
-		children: []*HtmlElement{div},
+		children: []*HtmlElement{div, button("Click me")},
 	}
 
 	html := HtmlElement{
