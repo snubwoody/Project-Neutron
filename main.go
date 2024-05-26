@@ -27,20 +27,8 @@ func Page(path string) {
 			P("Dashboard"),
 		),
 		Main(
-			Aside(
-				P("Hello world"),
-				Button("Click me"),
-			),
-			Section(
-				P("Hello world"),
-				Button("Click me"),
-				A("https://youtube.com", "This is a link to youtube"),
-				Row(
-					P("Hi"),
-					P("Hello"),
-					P("World"),
-				),
-			),
+			Sidebar(),
+			Section(),
 		),
 	)
 
@@ -55,4 +43,19 @@ func Page(path string) {
 	}
 
 	html.render(w)
+}
+
+func Sidebar() *HtmlElement {
+	return Column(
+		Row(
+			P("Top repositories"),
+			Button("New"),
+		),
+		A("#", "snubwoody/repo"),
+		A("#", "snubwoody/repo"),
+		A("#", "snubwoody/repo"),
+		A("#", "snubwoody/repo"),
+		A("#", "snubwoody/repo"),
+		A("#", "snubwoody/repo"),
+	)
 }

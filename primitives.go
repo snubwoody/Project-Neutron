@@ -1,6 +1,6 @@
 package main
 
-func Button(text string) *HtmlElement {
+func RawButton(text string) *HtmlElement {
 	return &HtmlElement{
 		tag:  "button",
 		text: text,
@@ -122,16 +122,6 @@ func A(link string, text string, children ...*HtmlElement) *HtmlElement {
 		children: children,
 		attr: map[string]string{
 			"href": link,
-		},
-	}
-}
-
-func Row(children ...*HtmlElement) *HtmlElement {
-	return &HtmlElement{
-		tag:      "div",
-		children: children,
-		attr: map[string]string{
-			"class": "row spacing-md",
 		},
 	}
 }

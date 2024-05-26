@@ -16,13 +16,12 @@ type HtmlElement struct {
 }
 
 func (element *HtmlElement) render(w *bufio.Writer) {
-	//FIXME class names on null classes
-	a := parseAttr(element.attr)
+	attr := parseAttr(element.attr)
 	htmlElement, _ := template.New(element.tag).Parse(
 		fmt.Sprintf(
 			"<%s %s>{{.text}}\n",
 			element.tag,
-			a,
+			attr,
 		),
 	)
 
